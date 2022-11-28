@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 
 import 'model/team.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
       teams.add(team);
     }
     
-    print(teams.length);
+
   }
 
   @override
