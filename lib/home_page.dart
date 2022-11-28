@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -6,11 +8,12 @@ class HomePage extends StatelessWidget {
 
   Future getTeams() async {
     var response = await http.get(Uri.https('balldontlie.io','api/v1/teams'));
-    print(response.body);
+    var jsonData = jsonDecode(response.body);
   }
 
   @override
   Widget build(BuildContext context) {
+    getTeams();
     return Scaffold(
 
     );
