@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'model/team.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -11,7 +13,10 @@ class HomePage extends StatelessWidget {
     var jsonData = jsonDecode(response.body);
 
     for (var eachTeam in jsonData['data']){
-      
+      final team = Team(
+        abbreviation: eachTeam['abbreviation'],
+        city: eachTeam['city'],
+      );
     }
   }
 
