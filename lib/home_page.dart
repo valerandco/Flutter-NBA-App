@@ -34,11 +34,23 @@ class HomePage extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done){
             return ListView.builder(
+              itemCount: teams.length,
               itemBuilder: (context, index){
-                return ListTile(
-                  title: Text(teams[index].abbreviation),
+                return Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                  ),
+                  child: ListTile(
+                    title: Text(teams[index].abbreviation),
+                    subtitle: Text(teams[index].city),
+                  ),
                 );
               },
+            );
+          }
+          else {
+            return const Center(
+              child: CircularProgressIndicator(),
             );
           }
         }
