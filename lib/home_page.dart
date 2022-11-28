@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
 import 'model/team.dart';
 
 // ignore: must_be_immutable
@@ -22,8 +20,6 @@ class HomePage extends StatelessWidget {
       );
       teams.add(team);
     }
-    
-
   }
 
   @override
@@ -61,7 +57,6 @@ class HomePage extends StatelessWidget {
           }
         }
       ),
-
     );
   }
 }
