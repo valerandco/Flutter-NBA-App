@@ -29,6 +29,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     getTeams();
     return Scaffold(
+      backgroundColor: Colors.blue[900],
       body: FutureBuilder(
         future: getTeams(),
         builder: (context, snapshot) {
@@ -36,13 +37,17 @@ class HomePage extends StatelessWidget {
             return ListView.builder(
               itemCount: teams.length,
               itemBuilder: (context, index){
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                  ),
-                  child: ListTile(
-                    title: Text(teams[index].abbreviation),
-                    subtitle: Text(teams[index].city),
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade200,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: ListTile(
+                      title: Text(teams[index].abbreviation),
+                      subtitle: Text(teams[index].city),
+                    ),
                   ),
                 );
               },
